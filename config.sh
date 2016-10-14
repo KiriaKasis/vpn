@@ -1,10 +1,10 @@
 #! /bin/bash
 
 apt update
-apt upgrade
-apt install openvpn
-apt install easy-rsa
-apt install curl
+apt upgrade -y
+apt install openvpn -y
+apt install easy-rsa -y
+apt install curl -y
  IPADDR=$(curl -s http://169.254.169.254/metadata/v1/interfaces/public/0/ipv4/address)
    gunzip -c /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz > /etc/openvpn/server.conf
    sed -i -e 's/dh dh1024.pem/dh dh2048.pem/' /etc/openvpn/server.conf
