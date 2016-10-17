@@ -13,6 +13,7 @@ runcmd:
   - sed -i -e 's/;push "dhcp-option DNS 208.67.220.220"/push "dhcp-option DNS 208.67.220.220"/' /etc/openvpn/server.conf
   - sed -i -e 's/;user nobody/user nobody/' /etc/openvpn/server.conf
   - sed -i -e 's/;group nogroup/group nogroup/' /etc/openvpn/server.conf
+  - sed -i -e 's/;duplicate-cn/duplicate-cn/' /etc/openvpn/server.conf
   - echo 1 > /proc/sys/net/ipv4/ip_forward
   - sed -i -e 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/' /etc/sysctl.conf
   - ufw allow ssh
